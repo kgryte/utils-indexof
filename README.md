@@ -56,13 +56,16 @@ var idx = indexOf( arr, 2, 10 );
 // returns -1
 ```
 
-If a `fromIndex` is less than `0`, the starting index is determined relative to the last index.
+If a `fromIndex` is less than `0`, the starting index is determined relative to the last index (with the last index being equivalent to `fromIndex = -1`).
 
 ``` javascript
-var arr = [ 1, 2, 3, 4, 5, 2, 6 ];
+var arr = [ 1, 2, 3, 4, 5, 2, 6, 2 ];
 
-var idx = indexOf( arr, 2, -3 );
+var idx = indexOf( arr, 2, -4 );
 // returns 5
+
+idx = indexOf( arr, 2, -1 );
+// returns 7
 ```
 
 If `fromIndex` is less than `0` __and__ its absolute value exceeds the input `array` length, the `function` searches the entire input `array`.
