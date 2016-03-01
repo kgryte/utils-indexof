@@ -1,6 +1,6 @@
 {
   "name": "utils-indexof",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Returns the first index at which a given element can be found.",
   "author": {
     "name": "Athan Reines",
