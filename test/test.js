@@ -92,6 +92,12 @@ tape( 'the function supports finding `NaN` elements', function test( t ) {
 	t.end();
 });
 
+tape( 'if a search element is not present, the function returns `-1`', function test( t ) {
+	var idx = indexOf( [1,2,3], 4 );
+	t.equal( idx, -1, 'returns -1' );
+	t.end();
+});
+
 tape( 'the function supports specifying a `fromIndex`', function test( t ) {
 	var arr;
 	var idx;
