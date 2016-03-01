@@ -89,6 +89,15 @@ var idx = indexOf( str, 'o' );
 
 ## Notes
 
+* 	Search is performed using __strict equality__ comparison. Thus,
+	
+	``` javascript
+	var arr = [ 1, [1,2,3], 3 ];
+
+	var idx = indexOf( arr, [1,2,3] );
+	// returns -1
+	```
+
 *	This implementation is __not__ [ECMAScript Standard][ecma-262] compliant. Notably, the [standard][ecma-262] specifies that an `array` be searched by calling `hasOwnProperty` (thus, for most cases, incurring a performance penalty), and the [standard][ecma-262] does __not__ accommodate a `searchElement` equal to `NaN`. In this implementation, the following is possible:
 
 	``` javascript
