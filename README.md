@@ -29,15 +29,6 @@ var idx = indexOf( arr, 3 );
 // returns 1
 ```
 
-The first argument is not limited to `arrays`, but may be any [array-like][validate.io-array-like] `object`.
-
-``` javascript
-var str = 'bebop';
-
-var idx = indexOf( str, 'o' );
-// returns 3
-```
-
 If a `searchElement` does __not__ exist in an input `array`, the `function` returns `-1`.
 
 ``` javascript
@@ -81,6 +72,15 @@ var arr = [ 1, 2, 3, 4, 5, 2, 6 ];
 
 var idx = indexOf( arr, 2, -10 );
 // returns 1
+```
+
+The first argument is not limited to `arrays`, but may be any [array-like][validate.io-array-like] `object`.
+
+``` javascript
+var str = 'bebop';
+
+var idx = indexOf( str, 'o' );
+// returns 3
 ```
 
 
