@@ -154,3 +154,59 @@ tape( 'if provided a `fromIndex` which is less than `0` and whose absolute value
 
 	t.end();
 });
+
+tape( 'the function supports searching `strings`', function test( t ) {
+	var str;
+	var idx;
+
+	str = 'bebop';
+	idx = indexOf( str, 'o' );
+
+	t.equal( idx, 3, 'returns first occurrence index' );
+	t.end();
+});
+
+tape( 'the function supports array-like `objects`', function test( t ) {
+	var obj;
+	var idx;
+
+	obj = {
+		'0': 'beep',
+		'1': 'boop',
+		'2': 'bap',
+		'3': 'bop',
+		'length': 4
+	};
+
+	idx = indexOf( obj, 'bap' );
+
+	t.equal( idx, 2, 'returns first occurrence index' );
+	t.end();
+});
+
+tape( 'the function does not guarantee that only "own" properties are searched', function test( t ) {
+	var foo;
+	var idx;
+
+	function Foo() {
+		this[ 0 ] = 'beep';
+		this[ 1 ] = 'boop';
+		this[ 2 ] = 'woot';
+		this[ 3 ] = 'bop';
+		this.length = 4;
+		return this;
+	}
+	Foo.prototype[ 2 ] = 'bap';
+
+	foo = new Foo();
+
+	idx = indexOf( foo, 'bap' );
+	t.equal( idx, -1, 'returns -1' );
+
+	delete foo[ 2 ];
+
+	idx = indexOf( foo, 'bap' );
+	t.equal( idx, 2, 'returns property on prototype' );
+
+	t.end();
+});

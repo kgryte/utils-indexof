@@ -104,6 +104,8 @@ var idx = indexOf( str, 'o' );
 		this[ 1 ] = 'boop';
 		this[ 2 ] = 'woot';
 		this[ 3 ] = 'bap';
+		this.length = 4;
+		return this;
 	}
 	Obj.prototype[ 2 ] = 'bop';
 
