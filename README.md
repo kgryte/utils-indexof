@@ -29,7 +29,7 @@ var idx = indexOf( arr, 3 );
 // returns 1
 ```
 
-If a `searchElement` does __not__ exist in an input `array`, the `function` returns `-1`.
+If a `searchElement` is __not__ present in an input `array`, the `function` returns `-1`.
 
 ``` javascript
 var arr = [ 4, 3, 2, 1 ];
