@@ -73,3 +73,9 @@ tape( 'if provided an array-like object having length `0`, the function always r
 	t.equal( idx, -1, 'returns -1' );
 	t.end();
 });
+
+tape( 'if provided a `fromIndex` which exceeds the input array length, the function always returns `-1`', function test( t ) {
+	var idx = indexOf( [1,2,3], 2, 999999999999 );
+	t.equal( idx, -1, 'returns -1' );
+	t.end();
+});
