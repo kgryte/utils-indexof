@@ -39,3 +39,9 @@ tape( 'the function throws a type error if not provided an array-like object', f
 		};
 	}
 });
+
+tape( 'if provided an array-like object having length `0`, the function always returns `-1`', function test( t ) {
+	var idx = indexOf( [], 5 );
+	t.equal( idx, -1, 'returns -1' );
+	t.end();
+});
