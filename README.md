@@ -38,6 +38,15 @@ var idx = indexOf( str, 'o' );
 // returns 3
 ```
 
+If a `searchElement` does __not__ exist in an input `array`, the `function` returns `-1`.
+
+``` javascript
+var arr = [ 4, 3, 2, 1 ];
+
+var idx = indexOf( arr, 5 );
+// returns -1
+```
+
 By default, the implementation searches an input `array` beginning from the first element. To start searching from a different element, specify a `fromIndex`.
 
 ``` javascript
