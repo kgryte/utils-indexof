@@ -40,6 +40,34 @@ tape( 'the function throws a type error if not provided an array-like object', f
 	}
 });
 
+tape( 'if provided a `fromIndex`, which is not an integer, the function throws a type error', function test( t ) {
+	var values;
+	var i;
+
+	values = [
+		'5',
+		5.234,
+		NaN,
+		true,
+		null,
+		undefined,
+		{},
+		[],
+		function(){}
+	];
+
+	for ( i = 0; i < values.length; i++ ) {
+		t.throws( badValue( values[i] ), TypeError, 'throws type error when provided ' + values[ i ] );
+	}
+	t.end();
+
+	function badValue( value ) {
+		return function badValue() {
+			indexOf( [1,2,3], 3, value );
+		};
+	}
+});
+
 tape( 'if provided an array-like object having length `0`, the function always returns `-1`', function test( t ) {
 	var idx = indexOf( [], 5 );
 	t.equal( idx, -1, 'returns -1' );
