@@ -37,7 +37,13 @@
     "string",
     "search",
     "find",
-    "index"
+    "locate",
+    "index",
+    "polyfill",
+    "ponyfill",
+    "arr",
+    "str",
+    "obj"
   ],
   "bugs": {
     "url": "https://github.com/kgryte/utils-indexof/issues"
